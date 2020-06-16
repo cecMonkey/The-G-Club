@@ -14,7 +14,7 @@
         'ui.grid.importer',
         'ngSanitize',
         'dndLists',
-        'app.garage'
+        'app.gclub'
     ])
 
     .config(configFunction)
@@ -31,7 +31,7 @@
     function runFunction($rootScope, $state) {
         $rootScope.$on("$stateChangeError", function(event, toState, toParams, fromState, fromParams, error) {
             if (error === "AUTH_REQUIRED") {
-                $state.go('garage');
+                $state.go('club');
             }
         });
     }

@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('app.garage')
+    .module('app.gclub')
     .factory('DataService', DataService)
 
     DataService.$inject = ['$firebaseArray', '$firebaseObject'];
@@ -14,7 +14,7 @@
       var service = {
         root:       root,
         storageRef: storageRef,
-        profiles:   $firebaseArray(root.ref('profiles/'))
+        //profiles:   $firebaseArray(root.ref('profiles/'))
       };
 
       return service;
