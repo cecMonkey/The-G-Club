@@ -14,8 +14,6 @@
           var service = {
               clubList: clubList,
               addEntry: addEntry,
-              updateClub: updateClub,
-              removeClub: removeClub,
               club: club,
               coaches: coaches,
               addCoach: addCoach,
@@ -32,15 +30,6 @@
           function addEntry(obj) {
               obj.date_added = firebase.database.ServerValue.TIMESTAMP;
               return DataService.root.ref('entries').push({name: obj.name, entry: obj.entry, date_added: obj.date_added});
-          }
-
-          function updateClub(obj) {
-              obj.date_modified = firebase.database.ServerValue.TIMESTAMP;
-              return DataService.root.ref('club/'+ obj.$id).update({location: obj.location, date_modified: obj.date_modified});
-          }
-
-          function removeClub(id) {
-              return root.ref('club/'+ id).remove();
           }
 
           function club(id) {

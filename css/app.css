@@ -30,7 +30,7 @@ table.mceLayout, textarea.tinyMCE {
 }
 
 .top-space-80 {
-  margin-top: 80px;
+  padding-top: 80px;
 }
 
 .list-btn {
@@ -408,10 +408,43 @@ body {
 
 .center {
     text-align: center;
-    color: #002d63;
+    color: #800000;
+}
+
+.entrance-title {
+    text-align: center;
+    font-weight: bold;
+}
+
+.title {
+    font-weight: bold;
 }
 
 .sportball-btn{
-    background-color: #002d63;
-    border-color: #002d63;
+    background-color: #800000;
+    border-color: #ee7340;
+    color: #ee7340;
+}
+
+.panel-body {
+    padding: 15;
+    /*background-color: #66ffff;*/
+    color: #800000;
+    text-shadow: rgb(177, 244, 234) 2px 2px;
+    background: url('https://images.template.net/wp-content/uploads/2017/02/01205003/Seamless-Beach-Patterns.jpg');
+
+}
+
+.container {
+    padding: 0px 0px 0px 15px;
+    color: #800000;
+    text-shadow: rgb(177, 244, 234) 2px 2px;
+    background: url('https://images.template.net/wp-content/uploads/2017/02/01205003/Seamless-Beach-Patterns.jpg');
+    width: auto;
+
+}
+
+body, html{
+    background-color: rgb(66, 146, 135);
+    height: 100%;
 }
