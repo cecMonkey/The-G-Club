@@ -1,0 +1,13 @@
+<div class="col-md-4 col-md-offset-4 col-xs-12">
+    <div class="panel panel-default top-space-15">
+        <div class="panel-body">
+            <img style='height: 100%; width: 100%; object-fit: contain' src="data/Sportball Logo.jpg"/>
+            <h3 class="center text-primary">Welcome to the Sportball Equipment System</h3>
+            <form ng-submit="vm.login(vm.pw)">
+                <p ng-show="vm.error" class="text-danger">{{ vm.error.message }}</p>
+                <input ng-model="vm.pw" type="password" name="password" class="form-control" placeholder="Password"  required><br>
+                <input type="submit" value="Login" class="btn btn-primary sportball-btn">
+            </form>
+        </div>
+    </div>
+</div>
