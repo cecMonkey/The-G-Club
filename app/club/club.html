@@ -6,7 +6,7 @@
 
 <div class="top-space-80">
     <div class="container-fluid">
-        <div class="colored" ng-repeat="e in vm.entries">
+        <div class="colored" ng-repeat="e in vm.entries | orderBy:'-'">
             <label>On {{e.date_added | date:'MMM dd yyyy'}}, {{e.name}} wrote:</label>
             <p>{{e.entry}}</p>
         </div>
