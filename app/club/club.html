@@ -6,25 +6,8 @@
 
 <div class="top-space-80">
     <div class="container-fluid">
-        <!--<div class="col-xs-12">
-            <a type="button" class="btn btn-sm btn-primary list-btn pull-right" tooltip-placement="top" uib-tooltip="New"
-            href="#/garage/equipment" ui-sref="equipment"><i class="fa fa-soccer-ball-o"></i>
-            </a>
-            <a type="button" class="btn btn-sm btn-primary list-btn pull-right" tooltip-placement="top" uib-tooltip="New"
-            href="#/garage/coach" ui-sref="coach"><i class="fa fa-user-plus"></i>
-            </a>
-        </div>-->
-        <!--<table class="colored" width="100%">
-            <<tr height="60" >
-                <th class="entrance-title"><h2>Entries</h2></th>
-            </tr>
-            <tr ng-repeat="e in vm.entries">
-                <td>On {{e.date_added | date:'yyyy-MM-dd'}} {{e.name}} wrote:</td>
-                <td>{{e.entry}}</td>
-            </tr>
-        </table>-->
         <div class="colored" ng-repeat="e in vm.entries">
-            <label>On {{e.date_added | date:'yyyy-MM-dd'}} {{e.name}} wrote:</label>
+            <label>On {{e.date_added | date:'MMM dd yyyy'}}, {{e.name}} wrote:</label>
             <p>{{e.entry}}</p>
         </div>
     </div>
