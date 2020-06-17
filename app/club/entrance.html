@@ -1,0 +1,16 @@
+<div class="col-xs-12">
+    <div class="panel panel-default top-space-15">
+        <div class="panel-body">
+            <h1 class="entrance-title">Welcome to The Grateful Club</h1><br>
+            <h3 class="center"><strong>Submit what you are grateful for today to enter the club.</strong></h3><br>
+            <form ng-submit="vm.submit(vm.name, vm.entry)">
+                <p ng-show="vm.error" class="text-danger">{{ vm.error.message }}</p>
+                <label for="nickname">Nickname:</label><br>
+                <input ng-model="vm.name" type="text" name="nickname" class="form-control" placeholder="Don't use your real name"  required><br>
+                <label for="nickname">Entry:</label><br>
+                <textarea ng-model="vm.entry" name="entry" class="form-control" placeholder="What are you grateful for?" required></textarea><br>
+                <input type="submit" value="Be Grateful" class="btn btn-primary sportball-btn">
+            </form>
+        </div>
+    </div>
+</div>

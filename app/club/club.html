@@ -1,0 +1,14 @@
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <span><h2 class="entrance-title">The Grateful Club</h2></span>
+    </div>
+</nav>
+
+<div class="top-space-80">
+    <div class="container-fluid">
+        <div class="colored" ng-repeat="e in vm.entries">
+            <label>On {{e.date_added | date:'MMM dd yyyy'}}, {{e.name}} wrote:</label>
+            <p>{{e.entry}}</p>
+        </div>
+    </div>
+</div>
