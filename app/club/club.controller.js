@@ -37,80 +37,7 @@
 
         }
 
-        //coachesCtrl.$inject = ['$state', '$scope', '$stateParams', 'clubService'];
 
-        /*function coachesCtrl($state, $scope, $stateParams, clubService) {
-
-            var vm = this;
-            vm.newEquipment = {};
-            vm.newCoach = {};
-
-            clubService.clubList().$loaded().then(function(res) {
-                res.sort(function(a, b){
-                    return a.name == b.name ? 0 : +(a.name> b.name) || -1;
-                });
-                vm.club = res;
-            });
-
-            clubService.coaches().$loaded().then(function(res) {
-                res.sort(function(a, b){
-                    return a.name == b.name ? 0 : +(a.name> b.name) || -1;
-                });
-                vm.coaches = res;
-            });
-
-            vm.sortEquipment = function() {
-                clubService.clubList().$loaded().then(function(res) {
-                    res.sort(function(a, b){
-                        return a.name == b.name ? 0 : +(a.name> b.name) || -1;
-                    });
-                    vm.club = res;
-                });
-            };
-
-            vm.sortCoaches = function() {
-                clubService.coaches().$loaded().then(function(res) {
-                    res.sort(function(a, b){
-                        return a.name == b.name ? 0 : +(a.name> b.name) || -1;
-                    });
-                    vm.coaches = res;
-                });
-            };
-
-
-
-            vm.removeCoach = function(row) {
-                  clubService.removeCoach(row.entity.$id);
-            }, function(error) {
-                  vm.error = error;
-            };
-
-            vm.editCoach = function(row) {
-                  $state.go('coach', {'rowEntity': row.entity});
-            };
-
-            vm.addEquipment = function() {
-                clubService.addEquipment(vm.newEquipment);
-                vm.newEquipment = null;
-                vm.sortEquipment();
-            }, function(error) {
-                vm.error = error;
-            };
-
-            vm.addCoach = function() {
-                clubService.addCoach(vm.newCoach);
-                vm.newCoach = null;
-                vm.sortCoaches();
-            }, function(error) {
-                vm.error = error;
-            };
-
-            vm.changeLocation = function(eq) {
-                console.log(eq);
-                clubService.updateEquipment(eq);
-            };
-
-        }*/
 
         clubCtrl.$inject = ['$state', '$scope', '$stateParams', 'clubService'];
 
@@ -121,6 +48,11 @@
             vm.club = {};
             vm.club_id = {};
 
+            clubService.entryList().$loaded().then(function(res) {
+                vm.entries = res;
+                console.log(vm.entries);
+            });
+
             vm.updateEquipment = function() {
             if (vm.club_id != null)
                 vm.club.date_updated = firebase.database.ServerValue.TIMESTAMP;
@@ -129,7 +61,7 @@
                 vm.error = error;
             };
 
-            vm.loadEquipment = function(id) {
+            vm.loadEquipment = function() {
                 clubService.club(id).$loaded().then(function(res) {
                           vm.club = res;
                     });

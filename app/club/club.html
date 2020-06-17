@@ -1,6 +1,6 @@
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
-        <span><h2 class="title">The Grateful Club</h2></span>
+        <span><h2 class="entrance-title">The Grateful Club</h2></span>
     </div>
 </nav>
 
@@ -14,46 +14,18 @@
             href="#/garage/coach" ui-sref="coach"><i class="fa fa-user-plus"></i>
             </a>
         </div>-->
-        <form ng-submit="vm.addEquipment()" class="form-horizontal">
-            <div class="form-group">
-                <div class="row">
-                    <div class="col-xs-10">
-                        <input type="text" ng-model="vm.newEquipment.name" class="form-control" placeholder="New Equipment">
-                    </div>
-                    <div class="col-xs-2">
-                        <button type="button" class="btn btn-sm btn-primary detail-btn sportball-btn pull-right" tooltip-placement="top" uib-tooltip="Add New Equipment" ng-click="vm.addEquipment()">
-                            <i class="fa fa-soccer-ball-o"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </form>
-        <form class="form-horizontal">
-            <div class="form-group">
-                <div class="row">
-                    <div class="col-xs-10">
-                        <input type="text" ng-model="vm.newCoach.name" class="form-control" placeholder="New Coach">
-                    </div>
-                    <div class="col-xs-2">
-                        <button type="button" class="btn btn-sm btn-primary sportball-btn detail-btn pull-right" tooltip-placement="top" uib-tooltip="Add New Coach" ng-click="vm.addCoach()">
-                            <i class="fa fa-user-plus"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </form>
-        <table class="colored" width="100%">
-              <tr height="60" >
-                <th>Equipment</th>
-                <th width="80" align="right">Location</th>
-              </tr>
-              <tr ng-repeat="e in vm.equipment">
-                <td>{{e.name}}</td>
-                <td align="right">
-                    <select class="picker" ng-model="e.location" ng-change="vm.changeLocation(e)" ng-options="c.name as c.name for c in vm.coaches">
-                    </select>
-                </td>
+        <!--<table class="colored" width="100%">
+            <<tr height="60" >
+                <th class="entrance-title"><h2>Entries</h2></th>
             </tr>
-        </table>
+            <tr ng-repeat="e in vm.entries">
+                <td>On {{e.date_added | date:'yyyy-MM-dd'}} {{e.name}} wrote:</td>
+                <td>{{e.entry}}</td>
+            </tr>
+        </table>-->
+        <div class="colored" ng-repeat="e in vm.entries">
+            <label>On {{e.date_added | date:'yyyy-MM-dd'}} {{e.name}} wrote:</label>
+            <p>{{e.entry}}</p>
+        </div>
     </div>
 </div>

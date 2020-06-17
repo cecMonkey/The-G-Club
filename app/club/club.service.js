@@ -12,19 +12,15 @@
           var root = firebase.database();
 
           var service = {
-              clubList: clubList,
+              entryList: entryList,
               addEntry: addEntry,
-              club: club,
-              coaches: coaches,
-              addCoach: addCoach,
-              removeCoach: removeCoach,
-              coach: coach
+              club: club
           };
 
           return service;
 
-          function clubList() {
-              return $firebaseArray(root.ref('club/'));
+          function entryList() {
+              return $firebaseArray(root.ref('entries/'));
           }
 
           function addEntry(obj) {
@@ -36,22 +32,6 @@
               return $firebaseObject(root.ref('club/'+ id));
           }
 
-          function coaches() {
-              return $firebaseArray(root.ref('coaches/'));
-          }
-
-          function addCoach(obj) {
-              obj.date_added = firebase.database.ServerValue.TIMESTAMP;
-              return DataService.root.ref('coaches').push({name: obj.name, date_added: obj.date_added});
-          }
-
-          function removeCoach(id) {
-              return root.ref('coaches/'+ id).remove();
-          }
-
-          function coach(id) {
-              return $firebaseObject(root.ref('coaches/'+ id));
-          }
     }
 
 })();

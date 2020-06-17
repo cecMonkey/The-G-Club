@@ -354,8 +354,16 @@ word-break: break-word;
     color: #3c763d;
 }
 
-.colored tr:nth-child(odd) {
-    background-color: #f8f8f8;
+.colored:nth-child(odd) {
+    background-color: #800000;
+    color: rgb(237, 244, 243);
+    padding: 10px 10px 10px 10px;
+}
+
+.colored:nth-child(even) {
+    background-color: rgb(237, 244, 243);
+    color: #800000;
+    padding: 10px 10px 10px 10px;
 }
 
 .quote_footer {

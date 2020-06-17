@@ -14,7 +14,7 @@
       var service = {
         root:       root,
         storageRef: storageRef,
-        //profiles:   $firebaseArray(root.ref('profiles/'))
+        profiles:   $firebaseArray(root.ref('profiles/'))
       };
 
       return service;
