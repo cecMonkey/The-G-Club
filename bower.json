@@ -23,6 +23,6 @@
     "angular-ui-router": "ui-router#^0.3.1",
     "angular-ui-select": "^0.18.0",
     "angularfire": "^2.0.1",
-    "rdash-ui": "~1.0.1",
+    "rdash-ui": "~1.0.1"
   }
 }
